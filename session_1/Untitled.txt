@@ -1,0 +1,284 @@
+kubectl get componentstatuses
+----------------------------------------------------
+NAME                 STATUS    MESSAGE              ERROR
+controller-manager   Healthy   ok                   
+scheduler            Healthy   ok                   
+etcd-1               Healthy   {"health": "true"}   
+etcd-2               Healthy   {"health": "true"}   
+etcd-0               Healthy   {"health": "true"}  
+
+kubectl config view
+----------------------------------------------------
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.192.4.112
+  name: gke_kamino-182816_us-central1-a_main-cluster
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.225.10.206
+  name: gke_lfp-production_us-central1-b_servants-cluster-test-server
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://104.154.170.214
+  name: gke_waveit-404_us-central1-c_newcluster-waveit-cluster
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://104.154.45.86
+  name: gke_waveit-404_us-central1-c_waveit-alpha-cluster
+- cluster:
+    certificate-authority-data: REDACTED
+    server: https://35.197.25.67:6443
+  name: kubernetes-the-hard-way
+- cluster:
+    certificate-authority: /home/lsantella/.minikube/ca.crt
+    server: https://192.168.99.100:8443
+  name: minikube
+contexts:
+- context:
+    cluster: gke_kamino-182816_us-central1-a_main-cluster
+    user: gke_kamino-182816_us-central1-a_main-cluster
+  name: gke_kamino-182816_us-central1-a_main-cluster
+- context:
+    cluster: gke_lfp-production_us-central1-b_servants-cluster-test-server
+    user: gke_lfp-production_us-central1-b_servants-cluster-test-server
+  name: gke_lfp-production_us-central1-b_servants-cluster-test-server
+- context:
+    cluster: gke_waveit-404_us-central1-c_newcluster-waveit-cluster
+    user: gke_waveit-404_us-central1-c_newcluster-waveit-cluster
+  name: gke_waveit-404_us-central1-c_newcluster-waveit-cluster
+- context:
+    cluster: gke_waveit-404_us-central1-c_waveit-alpha-cluster
+    user: gke_waveit-404_us-central1-c_waveit-alpha-cluster
+  name: gke_waveit-404_us-central1-c_waveit-alpha-cluster
+- context:
+    cluster: kubernetes-the-hard-way
+    user: admin
+  name: kubernetes-the-hard-way
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+current-context: kubernetes-the-hard-way
+kind: Config
+preferences: {}
+users:
+- name: admin
+  user:
+    client-certificate: /home/lsantella/admin.pem
+    client-key: /home/lsantella/admin-key.pem
+- name: gke_kamino-182816_us-central1-a_main-cluster
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl1HBcEGPyl5xs0Q-e7Hbxiyl-mhwq5TY16sLbcHU1REGB7AnU2NRRJGAXKP-LQKyTIZScRFQsV-YSR8902xJoiu4mrG7uUvm_pilzwdEoGv-Np3H-NGsgeN_CQqhTE
+        cmd-args: config config-helper --format=json
+        cmd-path: /home/lsantella/google-cloud-sdk/bin/gcloud
+        expiry: 2018-01-19 21:46:08
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_lfp-production_us-central1-b_servants-cluster-test-server
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl2pBVgS8SX_YHNJy1g3VFGMrZFOEx7zxHORwQKSwlsOBSkVyUmW06McKobsY67CSnl2JO-USpoUkmKFttFhDRqh5Bw_tW2Yf-lwDB5wVOlX8UBgiHdgn9E_0gmjHsk
+        cmd-args: config config-helper --format=json
+        cmd-path: /home/lsantella/google-cloud-sdk/bin/gcloud
+        expiry: 2018-04-26T20:22:41Z
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_waveit-404_us-central1-c_newcluster-waveit-cluster
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl2WBTf1yz--Xr2WESD6BdAx8GbUoonFq3_2HbLob_GAZ4yUVC7vGa1nbnUz-YBacEFi45mnKkYfHMwPzBllt3SDywAHsxDON0eILLptVPc0NgfhQEnLVx-woU2gK3M
+        cmd-args: config config-helper --format=json
+        cmd-path: /home/lsantella/google-cloud-sdk/bin/gcloud
+        expiry: 2018-04-07 13:37:48
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_waveit-404_us-central1-c_waveit-alpha-cluster
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.Gl2WBZeASSRiihkUtnItFuGYLIL6HM2iQSYY2iCBAx25xmfiwr_ZnNrWq--xlHuXqSO1fKRy70CEtJ2sktZAneVgyaNm2jaFxC8FejBQKiDxqkltM4RPKU81uXRyGGk
+        cmd-args: config config-helper --format=json
+        cmd-path: /home/lsantella/google-cloud-sdk/bin/gcloud
+        expiry: 2018-04-07 01:51:05
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: minikube
+  user:
+    client-certificate: /home/lsantella/.minikube/client.crt
+    client-key: /home/lsantella/.minikube/client.key
+
+
+
+kubectl describe nodes
+----------------------------------------------------
+Name:               worker-0
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=worker-0
+Annotations:        node.alpha.kubernetes.io/ttl=0
+                    volumes.kubernetes.io/controller-managed-attach-detach=true
+Taints:             <none>
+CreationTimestamp:  Tue, 01 May 2018 16:46:11 -0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  OutOfDisk        False   Tue, 01 May 2018 18:04:39 -0400   Tue, 01 May 2018 16:46:11 -0400   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure   False   Tue, 01 May 2018 18:04:39 -0400   Tue, 01 May 2018 16:46:11 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 01 May 2018 18:04:39 -0400   Tue, 01 May 2018 16:46:11 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  Ready            True    Tue, 01 May 2018 18:04:39 -0400   Tue, 01 May 2018 16:46:11 -0400   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  10.240.0.20
+  Hostname:    worker-0
+Capacity:
+ cpu:     1
+ memory:  1730232Ki
+ pods:    110
+Allocatable:
+ cpu:     1
+ memory:  1627832Ki
+ pods:    110
+System Info:
+ Machine ID:                 701b07ab9076d79ac2bfd95a31d0e1c7
+ System UUID:                701B07AB-9076-D79A-C2BF-D95A31D0E1C7
+ Boot ID:                    345592a3-988f-4bcf-bbf8-642d9a4f4d90
+ Kernel Version:             4.13.0-1013-gcp
+ OS Image:                   Ubuntu 16.04.4 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  cri-containerd://1.0.0-beta.1
+ Kubelet Version:            v1.9.0
+ Kube-Proxy Version:         v1.9.0
+ExternalID:                  worker-0
+Non-terminated Pods:         (1 in total)
+  Namespace                  Name                        CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                        ------------  ----------  ---------------  -------------
+  default                    busybox-855686df5d-9g55d    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ------------  ----------  ---------------  -------------
+  0 (0%)        0 (0%)      0 (0%)           0 (0%)
+Events:         <none>
+
+
+Name:               worker-1
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=worker-1
+Annotations:        node.alpha.kubernetes.io/ttl=0
+                    volumes.kubernetes.io/controller-managed-attach-detach=true
+Taints:             <none>
+CreationTimestamp:  Tue, 01 May 2018 17:01:07 -0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  OutOfDisk        False   Tue, 01 May 2018 18:04:43 -0400   Tue, 01 May 2018 17:01:07 -0400   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure   False   Tue, 01 May 2018 18:04:43 -0400   Tue, 01 May 2018 17:01:07 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 01 May 2018 18:04:43 -0400   Tue, 01 May 2018 17:01:07 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  Ready            True    Tue, 01 May 2018 18:04:43 -0400   Tue, 01 May 2018 17:01:07 -0400   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  10.240.0.21
+  Hostname:    worker-1
+Capacity:
+ cpu:     1
+ memory:  1730232Ki
+ pods:    110
+Allocatable:
+ cpu:     1
+ memory:  1627832Ki
+ pods:    110
+System Info:
+ Machine ID:                 fb3b1878edca4d5f0472989c26b717a6
+ System UUID:                FB3B1878-EDCA-4D5F-0472-989C26B717A6
+ Boot ID:                    6d49bf77-45b9-4e20-8d72-c9c31749f279
+ Kernel Version:             4.13.0-1013-gcp
+ OS Image:                   Ubuntu 16.04.4 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  cri-containerd://1.0.0-beta.1
+ Kubelet Version:            v1.9.0
+ Kube-Proxy Version:         v1.9.0
+ExternalID:                  worker-1
+Non-terminated Pods:         (1 in total)
+  Namespace                  Name                    CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                    ------------  ----------  ---------------  -------------
+  default                    nginx-8586cf59-f64rx    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ------------  ----------  ---------------  -------------
+  0 (0%)        0 (0%)      0 (0%)           0 (0%)
+Events:         <none>
+
+
+Name:               worker-2
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=worker-2
+Annotations:        node.alpha.kubernetes.io/ttl=0
+                    volumes.kubernetes.io/controller-managed-attach-detach=true
+Taints:             <none>
+CreationTimestamp:  Tue, 01 May 2018 17:05:01 -0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  OutOfDisk        False   Tue, 01 May 2018 18:04:38 -0400   Tue, 01 May 2018 17:05:01 -0400   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure   False   Tue, 01 May 2018 18:04:38 -0400   Tue, 01 May 2018 17:05:01 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 01 May 2018 18:04:38 -0400   Tue, 01 May 2018 17:05:01 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  Ready            True    Tue, 01 May 2018 18:04:38 -0400   Tue, 01 May 2018 17:05:01 -0400   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  10.240.0.22
+  Hostname:    worker-2
+Capacity:
+ cpu:     1
+ memory:  1730232Ki
+ pods:    110
+Allocatable:
+ cpu:     1
+ memory:  1627832Ki
+ pods:    110
+System Info:
+ Machine ID:                 fd2f01866e65dc28b9b155c14f15546b
+ System UUID:                FD2F0186-6E65-DC28-B9B1-55C14F15546B
+ Boot ID:                    affaf46b-b66b-49c3-9528-4de1a62117b2
+ Kernel Version:             4.13.0-1013-gcp
+ OS Image:                   Ubuntu 16.04.4 LTS
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  cri-containerd://1.0.0-beta.1
+ Kubelet Version:            v1.9.0
+ Kube-Proxy Version:         v1.9.0
+ExternalID:                  worker-2
+Non-terminated Pods:         (1 in total)
+  Namespace                  Name                         CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                         ------------  ----------  ---------------  -------------
+  kube-system                kube-dns-6c857864fb-5fgfq    260m (26%)    0 (0%)      110Mi (6%)       170Mi (10%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ------------  ----------  ---------------  -------------
+  260m (26%)    0 (0%)      110Mi (6%)       170Mi (10%)
+Events:
+  Type     Reason                   Age                From                  Message
+  ----     ------                   ----               ----                  -------
+  Normal   Starting                 59m                kubelet, worker-2     Starting kubelet.
+  Normal   NodeHasSufficientDisk    59m (x2 over 59m)  kubelet, worker-2     Node worker-2 status is now: NodeHasSufficientDisk
+  Normal   NodeHasSufficientMemory  59m (x2 over 59m)  kubelet, worker-2     Node worker-2 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    59m (x2 over 59m)  kubelet, worker-2     Node worker-2 status is now: NodeHasNoDiskPressure
+  Warning  InvalidDiskCapacity      59m                kubelet, worker-2     invalid capacity 0 on image filesystem
+  Normal   NodeAllocatableEnforced  59m                kubelet, worker-2     Updated Node Allocatable limit across pods
+  Normal   Starting                 59m                kube-proxy, worker-2  Starting kube-proxy.
+  Normal   NodeReady                59m                kubelet, worker-2     Node worker-2 status is now: NodeReady

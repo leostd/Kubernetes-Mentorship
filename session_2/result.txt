@@ -1,0 +1,94 @@
+Name:           nginx-deployment-569477d6d8-42z59
+Namespace:      default
+Node:           gke-word-forward-default-pool-6d6eac3b-th10/10.138.0.3
+Start Time:     Sun, 06 May 2018 23:41:46 -0400
+Labels:         app=nginx
+                pod-template-hash=1250338284
+Annotations:    kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"default","name":"nginx-deployment-569477d6d8","uid":"9140f18a-51a8-11e8-91ac-4201...
+                kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container nginx
+Status:         Pending
+IP:             
+Controlled By:  ReplicaSet/nginx-deployment-569477d6d8
+Containers:
+  nginx:
+    Container ID:   
+    Image:          nginx:1.7.9
+    Image ID:       
+    Port:           80/TCP
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gqmst (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          False 
+  PodScheduled   True 
+Volumes:
+  default-token-gqmst:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gqmst
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.alpha.kubernetes.io/notReady:NoExecute for 300s
+                 node.alpha.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason                 Age   From                                                  Message
+  ----    ------                 ----  ----                                                  -------
+  Normal  Scheduled              4s    default-scheduler                                     Successfully assigned nginx-deployment-569477d6d8-42z59 to gke-word-forward-default-pool-6d6eac3b-th10
+  Normal  SuccessfulMountVolume  3s    kubelet, gke-word-forward-default-pool-6d6eac3b-th10  MountVolume.SetUp succeeded for volume "default-token-gqmst"
+  Normal  Pulling                2s    kubelet, gke-word-forward-default-pool-6d6eac3b-th10  pulling image "nginx:1.7.9"
+
+
+Name:           nginx-deployment-569477d6d8-zzzw2
+Namespace:      default
+Node:           gke-word-forward-default-pool-6d6eac3b-6g3j/10.138.0.2
+Start Time:     Sun, 06 May 2018 23:41:47 -0400
+Labels:         app=nginx
+                pod-template-hash=1250338284
+Annotations:    kubernetes.io/created-by={"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"default","name":"nginx-deployment-569477d6d8","uid":"9140f18a-51a8-11e8-91ac-4201...
+                kubernetes.io/limit-ranger=LimitRanger plugin set: cpu request for container nginx
+Status:         Pending
+IP:             
+Controlled By:  ReplicaSet/nginx-deployment-569477d6d8
+Containers:
+  nginx:
+    Container ID:   
+    Image:          nginx:1.7.9
+    Image ID:       
+    Port:           80/TCP
+    State:          Waiting
+      Reason:       ContainerCreating
+    Ready:          False
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+    Environment:  <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-gqmst (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          False 
+  PodScheduled   True 
+Volumes:
+  default-token-gqmst:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-gqmst
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.alpha.kubernetes.io/notReady:NoExecute for 300s
+                 node.alpha.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason                 Age   From                                                  Message
+  ----    ------                 ----  ----                                                  -------
+  Normal  Scheduled              5s    default-scheduler                                     Successfully assigned nginx-deployment-569477d6d8-zzzw2 to gke-word-forward-default-pool-6d6eac3b-6g3j
+  Normal  SuccessfulMountVolume  4s    kubelet, gke-word-forward-default-pool-6d6eac3b-6g3j  MountVolume.SetUp succeeded for volume "default-token-gqmst"
+  Normal  Pulling                3s    kubelet, gke-word-forward-default-pool-6d6eac3b-6g3j  pulling image "nginx:1.7.9"
